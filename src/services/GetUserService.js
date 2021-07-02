@@ -16,7 +16,8 @@ class GetUserService{
         
         try {
             const user = await dynamoDb.get(params).promise()
-            if (!user){
+
+            if (user == {}){
                 throw new Error("User does not exist!");
             }
             return user

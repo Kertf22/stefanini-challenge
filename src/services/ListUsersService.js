@@ -12,7 +12,7 @@ class ListUsersService{
         try {
             const data = await dynamoDb.scan(params).promise();
 
-            if (!data){
+            if (data == {}){
                 throw new Error("There are no users on database!");
             }
 
