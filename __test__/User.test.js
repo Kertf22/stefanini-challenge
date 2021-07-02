@@ -73,12 +73,4 @@ describe('Aplication Tests', () => {
         expect(res.data).toHaveProperty("message")
  
     })
-
-    // Teste da função de listar todos os usuários,
-
-    it("Pegando todos os usuários",async () => {
-        const res = await axios.default.get(process.env.API_URL + '/users')
-
-        expect(res.status).toEqual(200)
-    })
 })
