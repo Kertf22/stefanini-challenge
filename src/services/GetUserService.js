@@ -13,14 +13,16 @@ class GetUserService{
                 id:user_id
             }
         }
+        
         try {
             const user = await dynamoDb.get(params).promise()
-
+            if (!user){
+                throw new Error("User does not exist!");
+            }
             return user
         } 
           catch (error) {
-            console.log(error);
-            throw new Error("Could not create user");
+            throw new Error("Could not find user");
         }
     }
 }

@@ -8,13 +8,17 @@ class ListUsersService{
         const params = {
             TableName: USERS_TABLE,
         }
+        
         try {
             const data = await dynamoDb.scan(params).promise();
+
+            if (!data){
+                throw new Error("There are no users on database!");
+            }
 
             return data;
         } 
           catch (error) {
-            console.log(error);
             throw new Error("Could not fetch data");
         }
     }

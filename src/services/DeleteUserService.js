@@ -13,10 +13,11 @@ class DeleteUserService {
                 id: user_id
             }
         }
+        
         try {
             await dynamoDb.delete(params).promise();
 
-            return {message:"DeleteItem succeeded"}
+            return { message:"DeleteItem succeeded" }
         } 
           catch (error) {
             throw new Error("Could not delete user");

@@ -36,10 +36,9 @@ class CreateUserService {
             return params.Item
         } 
           catch (error) {
-            console.log(error)
             throw new Error("Could not create user");
         }
     }
 }
 
-module.exports = CreateUserService
+module.exports = CreateUserService;

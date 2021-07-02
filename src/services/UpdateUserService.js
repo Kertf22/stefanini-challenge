@@ -39,7 +39,6 @@ class UpdateUserService{
             return user
         } 
           catch (error) {
-            console.log(error);
             throw new Error("Could not Update User");
         }
     }
